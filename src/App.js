@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import kitty from './kitty.png';
 
 function App() {
+  const [blessed, setBlessed] = useState("Boop the kitten for luck");
+
+  const handleClick = () => {
+    setBlessed("💖Kitten has blessed you💖")
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{ blessed }</h1>
+        <img onClick={ handleClick } src={ kitty } alt="a kitten"></img>
       </header>
     </div>
   );
